@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Archive Build') {
             steps {
-                archiveArtifacts artifacts: 'build/**/*', fingerprint: true
+                archiveArtifacts artifacts: 'dist/**/*', fingerprint: true
             }
         }
     }
