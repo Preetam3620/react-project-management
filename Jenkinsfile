@@ -1,9 +1,3 @@
-if (isUnix()) {
-    sh 'nohup command'
-} else {
-    bat 'start /b command'
-}
-
 pipeline {
     agent any
 
