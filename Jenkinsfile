@@ -1,3 +1,9 @@
+if (isUnix()) {
+    sh 'nohup command'
+} else {
+    bat 'start /b command'
+}
+
 pipeline {
     agent any
 
@@ -13,17 +19,17 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
         stage('Preview') {
             steps {
-                sh 'npm run preview'
+                bat 'npm run preview'
             }
         }
         stage('Archive Build') {
