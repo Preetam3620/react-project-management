@@ -21,11 +21,6 @@ pipeline {
                 bat 'npm run build'
             }
         }
-        stage('Preview') {
-            steps {
-                bat 'npm run preview'
-            }
-        }
         stage('Archive Build') {
             steps {
                 archiveArtifacts artifacts: 'build/**/*', fingerprint: true
